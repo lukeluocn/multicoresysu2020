@@ -1,0 +1,14 @@
+<script src="/multicoresysu2020/js/md5.min.js"></script>
+<script>function updateMD5() {
+    var user = document.getElementById("user").value;
+    var pass = document.getElementById("pass").value;
+    document.getElementById("md5code").innerText = md5(user + pass);
+}</script>
+<div>
+  <label for="user">Username:</label>
+  <input type="text" id="user" name="user">
+  <label for="pass">Password:</label>
+  <input type="text" id="pass" name="pass">
+  <input class="btn btn-default" type="submit" value="Update" onclick="updateMD5();">
+  <pre><code id="md5code" name="md5code"># MD5 code</code></pre>
+</div>
