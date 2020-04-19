@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>lukeluocn.github.io/multicoresysu2020/posts/</link>
+    <link>https://lukeluocn.github.io/multicoresysu2020/posts/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Apr 2020 00:54:16 +0800</lastBuildDate>
     
-	<atom:link href="lukeluocn.github.io/multicoresysu2020/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lukeluocn.github.io/multicoresysu2020/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My First Post</title>
-      <link>lukeluocn.github.io/multicoresysu2020/posts/my-first-post/</link>
+      <link>https://lukeluocn.github.io/multicoresysu2020/posts/my-first-post/</link>
       <pubDate>Mon, 20 Apr 2020 00:54:16 +0800</pubDate>
       
-      <guid>lukeluocn.github.io/multicoresysu2020/posts/my-first-post/</guid>
+      <guid>https://lukeluocn.github.io/multicoresysu2020/posts/my-first-post/</guid>
       <description>Hello from multicoresysu2020!</description>
     </item>
     
