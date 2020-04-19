@@ -1,0 +1,4 @@
+baseURL = "lukeluocn.github.io/multicoresysu2020/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "learn"
