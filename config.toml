@@ -8,7 +8,7 @@ editURL = "https://github.com/lukeluocn/multicoresysu2020/edit/master/content/"
 author = "LukeLook"
 description = "This is the course homepage for Multicore Programming (Spring 2020) opened in SDCS@SYSU."
 showVisitedLinks = false
-disableSearch = false
+disableSearch = true
 disableAssetsBusting = false
 disableInlineCopyToClipBoard = false
 disableShortcutsTitle = true
@@ -19,8 +19,8 @@ ordersectionsby = "weight"
 themeVariant = "green"
 
 # For search functionality
-[outputs]
-home = [ "HTML", "RSS", "JSON" ]
+# [outputs]
+# home = [ "HTML", "RSS", "JSON" ]
 
 [[menu.shortcuts]]
 name = "Home"
