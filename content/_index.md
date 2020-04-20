@@ -18,6 +18,4 @@ Get any questions? Read [this note](./about) and get in contact with our teachin
 
 | Date | News |
 |------|----------------|
-<!---
-| 2020.04.21 | [Slides](./syllabus) for the 1st lecture have been uploaded. |
---->
+| 2020.04.20 | [Slides](./syllabus) for the 1st lecture have been uploaded. |
