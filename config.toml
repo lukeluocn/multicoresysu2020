@@ -1,4 +1,43 @@
 baseURL = "https://lukeluocn.github.io/multicoresysu2020/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Multicore Programming Spring 2020"
 theme = "learn"
+
+[params]
+editURL = "https://github.com/lukeluocn/multicoresysu2020/edit/master/content/"
+author = "LukeLook"
+description = "This is the course homepage for Multicore Programming (Spring 2020) opened in SDCS@SYSU."
+showVisitedLinks = false
+disableSearch = false
+disableAssetsBusting = false
+disableInlineCopyToClipBoard = false
+disableShortcutsTitle = true
+disableLanguageSwitchingButton = false
+disableBreadcrumb = false
+disableNextPrev = true
+ordersectionsby = "weight"
+themeVariant = "green"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
+[[menu.shortcuts]]
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.shortcuts]]
+name = "Syllabus"
+url = "/syllabus"
+weight = 11
+
+[[menu.shortcuts]]
+name = "Assignments"
+url = "/assignments"
+weight = 19
+
+[[menu.shortcuts]]
+name = "About"
+url = "/about"
+weight = 20
