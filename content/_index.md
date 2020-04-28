@@ -8,7 +8,7 @@ Welcome to the course homepage for Multicore Programming, Spring 2020. This is a
 
 | Date | Upcoming Event |
 |------|----------------|
-| 2020.04.21 | The 1st online lecture will start at 8:00 a.m. on the Tencent Course platform. | 
+| ~~2020.04.21~~ | ~~The 1st online lecture will start at 8:00 a.m. on the Tencent Course platform.~~ | 
 
 {{% notice note %}}
 Get any questions? Read [this note](./about) and get in contact with our teaching assistant.
@@ -18,4 +18,5 @@ Get any questions? Read [this note](./about) and get in contact with our teachin
 
 | Date | News |
 |------|----------------|
+| 2020.04.28 | [Slides](./syllabus) for the 2nd lecture have been uploaded. |
 | 2020.04.20 | [Slides](./syllabus) for the 1st lecture have been uploaded. |
