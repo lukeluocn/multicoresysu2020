@@ -41,3 +41,8 @@ weight = 19
 name = "About"
 url = "/about"
 weight = 20
+
+[[menu.shortcuts]]
+name = "Tool: MD5 Generator"
+url = "/md5"
+weight = 21
