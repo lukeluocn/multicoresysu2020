@@ -18,6 +18,7 @@ Get any questions? Read [this note](./about) and get in contact with our teachin
 
 | Date | News |
 |------|----------------|
-| 2020.05.10 | [Slides](./syllabus) for the 3rd lecture have been uploaded. |
-| 2020.04.28 | [Slides](./syllabus) for the 2nd lecture have been uploaded. |
-| 2020.04.20 | [Slides](./syllabus) for the 1st lecture have been uploaded. |
+| 2020.05.23 | [Slides](./syllabus) for *CUDA Programming* have been uploaded. |
+| 2020.05.10 | [Slides](./syllabus) for *OpenMP Basics* have been uploaded. |
+| 2020.04.28 | [Slides](./syllabus) for *C/C++ Basics* have been uploaded. |
+| 2020.04.20 | [Slides](./syllabus) for *Course Introduction* have been uploaded. |
