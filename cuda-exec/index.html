@@ -1,0 +1,147 @@
+<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.68.3"><meta name=description content="This is the course homepage for Multicore Programming (Spring 2020) opened in SDCS@SYSU."><meta name=author content="LukeLook"><title>:: Multicore Programming Spring 2020</title><link href=/multicoresysu2020/css/nucleus.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/fontawesome-all.min.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/hybrid.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/featherlight.min.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/perfect-scrollbar.min.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/auto-complete.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/atom-one-dark-reasonable.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/theme.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/hugo-theme.css?1590845896 rel=stylesheet><link href=/multicoresysu2020/css/theme-green.css?1590845896 rel=stylesheet><script src=/multicoresysu2020/js/jquery-3.3.1.min.js?1590845896></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=/multicoresysu2020/cuda-exec/><nav id=sidebar><div id=header-wrapper><div id=header><a id=logo href=/multicoresysu2020><div style=color:#fff;font-size:xx-large;font-style:italic;font-weight:600><div style=text-align:left>Multicore</div><div style=text-align:left>Programming</div></div></a></div></div><div class=highlightable><ul class=topics></ul><section id=shortcuts><h3></h3><ul><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/>Home</a></li><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/syllabus>Syllabus</a></li><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/assignments>Assignments</a></li><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/about>About</a></li><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/md5>Tool: MD5 Generator</a></li><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/jupyterhub>Guide: JupyterHub</a></li><li><a class=padding href=https://lukeluocn.github.io/multicoresysu2020/cuda-exec>Guide: rexec</a></li></ul></section><section id=footer><p><i class="fas fa-heart"></i>&nbsp;Built with <a href=https://github.com/matcornic/hugo-theme-learn>Learn</a> from <a href=https://getgrav.org>Grav</a> and <a href=https://gohugo.io/>Hugo</a></p><p><i class="fas fa-heart"></i>&nbsp;Deployed via GitHub <a href=https://pages.github.com/>Pages</a> and <a href=https://github.com/features/actions>Actions</a></p></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=top-github-link><a class=github-link title="Edit this page" href=https://github.com/lukeluocn/multicoresysu2020/edit/master/content//cuda-exec.md target=blank><i class="fas fa-code-branch"></i><span id=top-github-link-text>Edit this page</span></a></div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i></a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span><span class=links><a href=/multicoresysu2020/>Home</a> ></span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#preliminaries>Preliminaries</a><ul><li><a href=#docker-installation>Docker Installation</a></li><li><a href=#pull-the-image-for-local-compilation>Pull the Image for Local Compilation</a></li><li><a href=#download-the-utility>Download the Utility</a></li><li><a href=#create-your-credential>Create Your Credential</a></li></ul></li><li><a href=#get-the-help-message>Get the Help Message</a><ul><li><a href=#command>Command</a></li><li><a href=#example-output>Example Output</a></li></ul></li><li><a href=#query-the-remote-devices-statuses>Query the Remote Devices Statuses</a><ul><li><a href=#command-1>Command</a></li><li><a href=#example-output-1>Example Output</a></li></ul></li><li><a href=#compile-a-cuda-program-locally-cuda-gpus-are-not-required>Compile a CUDA Program Locally (CUDA GPUs are not required!)</a><ul><li><a href=#command-2>Command</a></li><li><a href=#example-output-2>Example Output</a></li></ul></li><li><a href=#compile-a-cuda-program-locally-and-offload-it-to-the-remote-server>Compile a CUDA Program Locally and Offload it to the Remote Server</a><ul><li><a href=#command-3>Command</a></li><li><a href=#example-output-3>Example Output</a></li></ul></li><li><a href=#query-the-output-of-a-previously-offloaded-cuda-program>Query the Output of a Previously Offloaded CUDA Program</a><ul><li><a href=#command-4>Command</a></li><li><a href=#example-output-4>Example Output</a></li></ul></li><li><a href=#force-to-re-run-your-executable>Force to Re-run Your Executable</a><ul><li><a href=#command-5>Command</a></li></ul></li><li><a href=#other-resources>Other Resources</a></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1></h1><h1 id=a-brief-guide-to-the-rexec-utility>A Brief Guide to the <code>rexec</code> Utility</h1><p>The <code>rexec</code> utility is still on its early development stage and is far from stable. The usage guide is also a work in progress.</p><p>Besides, we would make the <code>rexec</code> utility project open soon.</p><h2 id=preliminaries>Preliminaries</h2><h3 id=docker-installation>Docker Installation</h3><ul><li>Windows (other than home editions): <a href=https://hub.docker.com/editions/community/docker-ce-desktop-windows>Docker Desktop for Windows</a></li><li>macOS: <a href=https://hub.docker.com/editions/community/docker-ce-desktop-mac>Docker Desktop for Mac</a></li><li>Linux: <a href=https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/>Docker CE</a></li></ul><h3 id=pull-the-image-for-local-compilation>Pull the Image for Local Compilation</h3><p>This image contains the full CUDA 10.2 toolkit and so is quite large (~4GB). It might take you some time to pull all layers.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker pull registry.cn-shenzhen.aliyuncs.com/multicoresysu2020/cuda-cpu-dev:v0.1.6
+</code></pre></div><h3 id=download-the-utility>Download the Utility</h3><ul><li><a href=../rexec/rexec.exe>Latest Windows release</a></li><li><a href=../rexec/rexec.macos>Latest macOS release</a></li><li><a href=../rexec/rexec>Latest Linux release</a></li></ul><h3 id=create-your-credential>Create Your Credential</h3><p>Most of the functionalities will require your credential. It is a good idea to persist your credential in a configuration file first. <code>rexec</code> reads in a configuration file with the <code>.toml</code> format, and the default path it looks for is <code>./config.toml</code> (relative to the work directory).</p><p>In the current version, you should provide your <code>sn</code> (student number) and <code>pass</code> (password) in the configuration file and can specify the project <code>home</code> directory for convenience.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>sn = <span style=color:#e6db74>&#34;{student number}&#34;</span>
+pass = <span style=color:#e6db74>&#34;{password}&#34;</span>
+
+<span style=color:#75715e># The project `home` must be relative to the work directory:</span>
+<span style=color:#75715e>#   the program will join the `home` variable as follows: $(pwd)/$home.</span>
+<span style=color:#75715e># All source code and resource files should be gathered in the project `home`:</span>
+<span style=color:#75715e>#   resources outside the folder through linking are not supported.</span>
+<span style=color:#75715e># Be default (when `home` is an empty string), the work directory will be</span>
+<span style=color:#75715e>#   treated as the home directly.</span>
+<span style=color:#75715e># Besides, you can specify the `home` through command line arguments, e.g.,</span>
+<span style=color:#75715e>#   `--home vecadd` asks the program to look into $(pwd)/vecadd.</span>
+home = <span style=color:#e6db74>&#34;&#34;</span>
+</code></pre></div><p>With all these preliminaries satisfied, we can have a look at the functionalities <code>rexec</code> provides.</p><h2 id=get-the-help-message>Get the Help Message</h2><h3 id=command>Command</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>./rexec.macos --help
+</code></pre></div><h3 id=example-output>Example Output</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>Usage of ./rexec.macos:
+      --co               compile only
+  -c, --config string    configuration file <span style=color:#f92672>(</span>default ./config.toml<span style=color:#f92672>)</span>
+      --devices string   specify the CUDA devices to use <span style=color:#f92672>(</span>examples: 0|1|2|3|1,2|1-2<span style=color:#f92672>)</span>
+      --force            force to re-run
+      --home string      project home relative to the work dir
+      --nvidia           run nvidia-smi
+      --tag string       executable tag to query
+pflag: help requested
+</code></pre></div><h2 id=query-the-remote-devices-statuses>Query the Remote Devices Statuses</h2><h3 id=command-1>Command</h3><p>Occasionally, some GPU devices can be busy and all their graphical memory spaces are taken. In these cases, you might not be able to run your program successfully. To this concern, you might query devices&rsquo; statuses first and then decide the most suitable GPU device you want to use by specifying the <code>--device</code> option.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>~ ./rexec.macos --nvidia
+</code></pre></div><h3 id=example-output-1>Example Output</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> Sat May <span style=color:#ae81ff>30</span> 11:07:38 <span style=color:#ae81ff>2020</span>
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|<span style=color:#f92672>===============================</span>+<span style=color:#f92672>======================</span>+<span style=color:#f92672>======================</span>|
+|   <span style=color:#ae81ff>0</span>  Tesla V100-SXM2...  Off  | 00000000:1A:00.0 Off |                    <span style=color:#ae81ff>0</span> |
+| N/A   49C    P0    57W / 300W |  32396MiB / 32510MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   <span style=color:#ae81ff>1</span>  Tesla V100-SXM2...  Off  | 00000000:3D:00.0 Off |                    <span style=color:#ae81ff>0</span> |
+| N/A   48C    P0    58W / 300W |  31041MiB / 32510MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   <span style=color:#ae81ff>2</span>  Tesla V100-SXM2...  Off  | 00000000:89:00.0 Off |                    <span style=color:#ae81ff>0</span> |
+| N/A   48C    P0    59W / 300W |   5708MiB / 32510MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   <span style=color:#ae81ff>3</span>  Tesla V100-SXM2...  Off  | 00000000:B2:00.0 Off |                    <span style=color:#ae81ff>0</span> |
+| N/A   61C    P0   107W / 300W |   2181MiB / 32510MiB |     69%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|<span style=color:#f92672>=============================================================================</span>|
++-----------------------------------------------------------------------------+
+</code></pre></div><h2 id=compile-a-cuda-program-locally-cuda-gpus-are-not-required>Compile a CUDA Program Locally (CUDA GPUs are not required!)</h2><h3 id=command-2>Command</h3><p>Compile-only mode could be useful when you only want to confirm that your project can be compiled without errors first.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>~ ./rexec.macos --co --home vecadd
+</code></pre></div><h3 id=example-output-2>Example Output</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>INFO<span style=color:#f92672>[</span>0014<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>run -t --rm -v <span style=color:#66d9ef>$(</span>pwd<span style=color:#66d9ef>)</span>/vecadd:/mnt -e GROUP_ID<span style=color:#f92672>=</span><span style=color:#ae81ff>20</span> -e USER_ID<span style=color:#f92672>=</span><span style=color:#ae81ff>501</span> registry.cn-shenzhen.aliyuncs.com/multicoresysu2020/cuda-cpu-dev:v0.1.6 mkdir -p /mnt/build <span style=color:#f92672>&amp;&amp;</span> cd /mnt/build <span style=color:#f92672>&amp;&amp;</span> cmake .. <span style=color:#f92672>&amp;&amp;</span> make<span style=color:#f92672>]</span>
+<span style=color:#f92672>[</span> mkdir -p /mnt/build <span style=color:#f92672>&amp;&amp;</span> cd /mnt/build <span style=color:#f92672>&amp;&amp;</span> cmake .. <span style=color:#f92672>&amp;&amp;</span> make <span style=color:#f92672>]</span>
+addgroup: The GID <span style=color:#e6db74>`</span>20<span style=color:#e6db74>&#39; is already in use.
+</span><span style=color:#e6db74>Adding user `nameless&#39;</span> ...
+Adding new user <span style=color:#e6db74>`</span>nameless<span style=color:#e6db74>&#39; (501) with group `dialout&#39;</span> ...
+Creating home directory <span style=color:#e6db74>`</span>/home/nameless<span style=color:#e6db74>&#39; ...
+</span><span style=color:#e6db74>Copying files from `/etc/skel&#39;</span> ...
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check <span style=color:#66d9ef>for</span> working C compiler: /usr/bin/cc
+-- Check <span style=color:#66d9ef>for</span> working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span style=color:#66d9ef>done</span>
+-- Detecting C compile features
+-- Detecting C compile features - <span style=color:#66d9ef>done</span>
+-- Check <span style=color:#66d9ef>for</span> working CXX compiler: /usr/bin/c++
+-- Check <span style=color:#66d9ef>for</span> working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span style=color:#66d9ef>done</span>
+-- Detecting CXX compile features
+-- Detecting CXX compile features - <span style=color:#66d9ef>done</span>
+-- Looking <span style=color:#66d9ef>for</span> pthread.h
+-- Looking <span style=color:#66d9ef>for</span> pthread.h - found
+-- Looking <span style=color:#66d9ef>for</span> pthread_create
+-- Looking <span style=color:#66d9ef>for</span> pthread_create - not found
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthreads
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthreads - not found
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthread
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Configuring <span style=color:#66d9ef>done</span>
+-- Generating <span style=color:#66d9ef>done</span>
+-- Build files have been written to: /mnt/build
+<span style=color:#f92672>[</span> 50%<span style=color:#f92672>]</span> Building NVCC <span style=color:#f92672>(</span>Device<span style=color:#f92672>)</span> object CMakeFiles/main.dir/src/main_generated_main.cu.o
+Scanning dependencies of target main
+<span style=color:#f92672>[</span>100%<span style=color:#f92672>]</span> Linking CXX executable main
+ 100%<span style=color:#f92672>]</span> Built target main
+</code></pre></div><h2 id=compile-a-cuda-program-locally-and-offload-it-to-the-remote-server>Compile a CUDA Program Locally and Offload it to the Remote Server</h2><h3 id=command-3>Command</h3><p>This is the full mode &mdash; with which <code>rexec</code> compiles the project for you, offloads the executable to the remote server on behalf of you, and queries the result. Note that it is possible that you will have to wait for some time before querying the result back (depending on the buffer size), but it is safe to cancel the querying process. You can query the result manually some time later.</p><p>CAVEAT: currently <code>rexec</code> only supports offloading a single-filed executable (i.e., your executable should not rely on extra resources). Besides, the executable must be <code>main</code> (we don&rsquo;t see any marginal benefits from allowing you to specify the executable name currently).</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>~ ./rexec.macos --home vecadd
+</code></pre></div><h3 id=example-output-3>Example Output</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>INFO<span style=color:#f92672>[</span>0016<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>run -t --rm -v <span style=color:#66d9ef>$(</span>pwd<span style=color:#66d9ef>)</span>/vecadd:/mnt -e GROUP_ID<span style=color:#f92672>=</span><span style=color:#ae81ff>20</span> -e USER_ID<span style=color:#f92672>=</span><span style=color:#ae81ff>501</span> registry.cn-shenzhen.aliyuncs.com/multicoresysu2020/cuda-cpu-dev:v0.1.6 mkdir -p /mnt/build <span style=color:#f92672>&amp;&amp;</span> cd /mnt/build <span style=color:#f92672>&amp;&amp;</span> cmake .. <span style=color:#f92672>&amp;&amp;</span> make<span style=color:#f92672>]</span>
+<span style=color:#f92672>[</span> mkdir -p /mnt/build <span style=color:#f92672>&amp;&amp;</span> cd /mnt/build <span style=color:#f92672>&amp;&amp;</span> cmake .. <span style=color:#f92672>&amp;&amp;</span> make <span style=color:#f92672>]</span>
+addgroup: The GID <span style=color:#e6db74>`</span>20<span style=color:#e6db74>&#39; is already in use.
+</span><span style=color:#e6db74>Adding user `nameless&#39;</span> ...
+Adding new user <span style=color:#e6db74>`</span>nameless<span style=color:#e6db74>&#39; (501) with group `dialout&#39;</span> ...
+Creating home directory <span style=color:#e6db74>`</span>/home/nameless<span style=color:#e6db74>&#39; ...
+</span><span style=color:#e6db74>Copying files from `/etc/skel&#39;</span> ...
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check <span style=color:#66d9ef>for</span> working C compiler: /usr/bin/cc
+-- Check <span style=color:#66d9ef>for</span> working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - <span style=color:#66d9ef>done</span>
+-- Detecting C compile features
+-- Detecting C compile features - <span style=color:#66d9ef>done</span>
+-- Check <span style=color:#66d9ef>for</span> working CXX compiler: /usr/bin/c++
+-- Check <span style=color:#66d9ef>for</span> working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - <span style=color:#66d9ef>done</span>
+-- Detecting CXX compile features
+-- Detecting CXX compile features - <span style=color:#66d9ef>done</span>
+-- Looking <span style=color:#66d9ef>for</span> pthread.h
+-- Looking <span style=color:#66d9ef>for</span> pthread.h - found
+-- Looking <span style=color:#66d9ef>for</span> pthread_create
+-- Looking <span style=color:#66d9ef>for</span> pthread_create - not found
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthreads
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthreads - not found
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthread
+-- Looking <span style=color:#66d9ef>for</span> pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Configuring <span style=color:#66d9ef>done</span>
+-- Generating <span style=color:#66d9ef>done</span>
+-- Build files have been written to: /mnt/build
+<span style=color:#f92672>[</span> 50%<span style=color:#f92672>]</span> Building NVCC <span style=color:#f92672>(</span>Device<span style=color:#f92672>)</span> object CMakeFiles/main.dir/src/main_generated_main.cu.o
+Scanning dependencies of target main
+<span style=color:#f92672>[</span>100%<span style=color:#f92672>]</span> Linking CXX executable main
+ 100%<span style=color:#f92672>]</span> Built target main
+INFO<span style=color:#f92672>[</span>0016<span style=color:#f92672>]</span> Offloaded successfully <span style=color:#f92672>(</span>a10120e08db55e989711ffd83a4be3dc<span style=color:#f92672>)</span>.
+INFO<span style=color:#f92672>[</span>0016<span style=color:#f92672>]</span> Press &lt;Ctrl&gt;+&lt;C&gt; to stop querying.
+INFO<span style=color:#f92672>[</span>0017<span style=color:#f92672>]</span> v0: <span style=color:#ae81ff>0</span>
+v1: <span style=color:#ae81ff>2</span>
+v2: <span style=color:#ae81ff>4</span>
+v3: <span style=color:#ae81ff>6</span>
+v4: <span style=color:#ae81ff>8</span>
+v5: <span style=color:#ae81ff>10</span>
+v6: <span style=color:#ae81ff>12</span>
+v7: <span style=color:#ae81ff>14</span>
+</code></pre></div><h2 id=query-the-output-of-a-previously-offloaded-cuda-program>Query the Output of a Previously Offloaded CUDA Program</h2><h3 id=command-4>Command</h3><p>When you offloads an executable successfully, you would get a tag of the executable (e.g., <code>a10120e08db55e989711ffd83a4be3dc</code> in the previous section). You can query the output of it manually by specifying the <code>--tag</code> option.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>~ ./rexec.macos --tag a10120e08db55e989711ffd83a4be3dc
+</code></pre></div><h3 id=example-output-4>Example Output</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> Press &lt;Ctrl&gt;+&lt;C&gt; to stop querying.
+INFO<span style=color:#f92672>[</span>0000<span style=color:#f92672>]</span> v0: <span style=color:#ae81ff>0</span>
+v1: <span style=color:#ae81ff>2</span>
+v2: <span style=color:#ae81ff>4</span>
+v3: <span style=color:#ae81ff>6</span>
+v4: <span style=color:#ae81ff>8</span>
+v5: <span style=color:#ae81ff>10</span>
+v6: <span style=color:#ae81ff>12</span>
+v7: <span style=color:#ae81ff>14</span>
+</code></pre></div><h2 id=force-to-re-run-your-executable>Force to Re-run Your Executable</h2><h3 id=command-5>Command</h3><p>By default, the remote server enforces a policy that if an executable has been offloaded and run before, it would not execute it for a second time but just response you with the previous output.</p><p>However, as we mention earlier, there are chances that our CUDA programs can fail owing to the lack of memory space. In these cases, you may specify the <code>--force</code> option to force the server to re-run your executable. And to avoid memory space shortage again, you&rsquo;d better specify the device to use by using the <code>--devices</code> option.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>~ ./rexec.macos --home vecadd --force --devices <span style=color:#ae81ff>2</span>
+</code></pre></div><h2 id=other-resources>Other Resources</h2><ul><li>You can find the example project <code>vecadd</code> <a href=https://github.com/lukeluocn/multicoresysu2020/tree/master/content/rexec/vecadd>here</a>.</li></ul><footer class=footline></footer></div></div><div id=navigation></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/multicoresysu2020/js/clipboard.min.js?1590845896></script><script src=/multicoresysu2020/js/perfect-scrollbar.min.js?1590845896></script><script src=/multicoresysu2020/js/perfect-scrollbar.jquery.min.js?1590845896></script><script src=/multicoresysu2020/js/jquery.sticky.js?1590845896></script><script src=/multicoresysu2020/js/featherlight.min.js?1590845896></script><script src=/multicoresysu2020/js/highlight.pack.js?1590845896></script><script>hljs.initHighlightingOnLoad();</script><script src=/multicoresysu2020/js/modernizr.custom-3.6.0.js?1590845896></script><script src=/multicoresysu2020/js/learn.js?1590845896></script><script src=/multicoresysu2020/js/hugo-learn.js?1590845896></script><link href=/multicoresysu2020/mermaid/mermaid.css?1590845896 rel=stylesheet><script src=/multicoresysu2020/mermaid/mermaid.js?1590845896></script><script>mermaid.initialize({startOnLoad:true});</script></body></html>
