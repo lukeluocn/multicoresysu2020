@@ -47,7 +47,7 @@ pass = "{password}"
 home = ""
 ```
 
-With all these preliminaries satisfied, we can have a look at the functionalities `rexec` provides.
+With all these preliminaries satisfied, you can go with the functionalities `rexec` provides.
 
 ## Get the Help Message
 
@@ -75,7 +75,7 @@ pflag: help requested
 
 ### Command
 
-Occasionally, some GPU devices can be busy and all their graphical memory spaces are taken. In these cases, you might not be able to run your program successfully. To this concern, you might query devices' statuses first and then decide the most suitable GPU device you want to use by specifying the `--device` option.
+Occasionally, some GPU devices can be busy and all their graphical memory spaces are taken. In these cases, you might not be able to run your program successfully. To this concern, you can query devices' statuses first and then decide the most suitable one you want to use by specifying the `--device` option.
 
 ```bash
 ~ ./rexec.macos --nvidia
@@ -115,7 +115,7 @@ INFO[0000] Sat May 30 11:07:38 2020
 
 ### Command
 
-Compile-only mode could be useful when you only want to confirm that your project can be compiled without errors first.
+Compile-only mode could be useful when you only want to confirm that your project can be compiled without errors.
 
 ```bash
 ~ ./rexec.macos --co --home vecadd
@@ -167,9 +167,11 @@ Scanning dependencies of target main
 
 ### Command
 
-This is the full mode --- with which `rexec` compiles the project for you, offloads the executable to the remote server on behalf of you, and queries the result. Note that it is possible that you will have to wait for some time before querying the result back (depending on the buffer size), but it is safe to cancel the querying process. You can query the result manually some time later.
+This is the full mode --- with which `rexec` compiles the project for you, offloads the executable to the remote server on behalf of you, and queries the corresponding result. Note that it is possible you will have to wait for some time before querying the result back (depending on the buffer size), but it is safe to cancel the querying process. You can query the result manually some time later.
 
-CAVEAT: currently `rexec` only supports offloading a single-filed executable (i.e., your executable should not rely on extra resources). Besides, the executable must be `main` (we don't see any marginal benefits from allowing you to specify the executable name currently).
+{{% notice note %}}
+CAVEAT: currently `rexec` only supports offloading a single-filed executable (i.e., your executable should not rely on extra resources). Besides, the executable must be `main` (we don't see any marginal benefits from allowing you to specify the executable name in the current version).
+{{% /notice %}}
 
 ```bash
 ~ ./rexec.macos --home vecadd
@@ -255,9 +257,9 @@ v7: 14
 
 ### Command
 
-By default, the remote server enforces a policy that if an executable has been offloaded and run before, it would not execute it for a second time but just response you with the previous output.
+By default, the remote server enforces a policy that if an executable has been offloaded and run before, it would not be executed for a second time but instead, the previous output will be returned.
 
-However, as we mention earlier, there are chances that our CUDA programs can fail owing to the lack of memory space. In these cases, you may specify the `--force` option to force the server to re-run your executable. And to avoid memory space shortage again, you'd better specify the device to use by using the `--devices` option.
+However, as we mentioned earlier, there are chances that your CUDA programs can fail owing to the lack of memory spaces. In these cases, you may specify the `--force` option to force the server to re-run your executable. And to avoid memory space shortage again, you'd better specify the device to use by using the `--devices` option.
 
 ```bash
 ~ ./rexec.macos --home vecadd --force --devices 2

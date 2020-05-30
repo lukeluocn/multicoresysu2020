@@ -1,4 +1,4 @@
-# A Brief Guide to the Usage of the JupyterHub Platform
+# A Brief Guide to the JupyterHub Platform
 
 First log in to http://jupyterhub.vickytse.cn/ (remember that you might have to set-up the VPN connection first).
 
@@ -26,7 +26,7 @@ Open a new `Launcher` tab, and select the `Terminal` option on the `Launcher` pa
 
 Then you can use the pre-installed CUDA toolkit through the `Terminal`.
 
-![jub-terminal](../jhub-terminal.png)
+![jhub-terminal](../figures/jhub-terminal.png)
 
 Example commands include:
 
