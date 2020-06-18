@@ -8,6 +8,7 @@ Welcome to the course homepage for Multicore Programming, Spring 2020. This is a
 
 | Date | Upcoming Event |
 |------|----------------|
+| 2020.07.05 | HW1 due on 23:59. |
 | ~~2020.04.21~~ | ~~The 1st online lecture will start at 8:00 a.m. on the Tencent Course platform.~~ | 
 
 {{% notice note %}}
@@ -18,6 +19,7 @@ Get any questions? Read [this note](./about) and get in contact with our teachin
 
 | Date | News |
 |------|----------------|
+| 2020.06.18 | [HW1](./assignments) has been released. |
 | 2020.06.09 | [Slides](./syllabus) for *CUDA Memory* have been uploaded. |
 | 2020.05.23 | [Slides](./syllabus) for *CUDA Programming* have been uploaded. |
 | 2020.05.10 | [Slides](./syllabus) for *OpenMP Basics* have been uploaded. |
