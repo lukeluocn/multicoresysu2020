@@ -28,21 +28,21 @@ referencePoints = [
 
 We conclude that:
 - a test sample is indeed two arrays of float numbers with some meta data;
-- the first three integers, i.e., $k$, $m$, and $n$, make up the meta data part,
-  with $k$ being the dimension size, $m$ the number of search points, and
-  $n$ the number of reference points;
-- then there are $m$ points in the searchPoints array, with every $k$
+- the first three integers, i.e., `k`, `m`, and `n`, make up the meta data part,
+  with `k` being the dimension size, `m` the number of search points, and
+  `n` the number of reference points;
+- then there are `m` points in the searchPoints array, with every `k`
   consecutive numbers representing a search point;
 - and it is similar for the referencePoints array;
-- besides, all of search points and reference points reside in $[0, 1]^k$.
+- besides, all of search points and reference points reside in `[0, 1]^k`.
 
 As required in the slides for hw2, we have to find out the nearest point of each
 search point and return their indices. We assume the reference points are
 indexed starting from 0. And for search points, we should preserve their order
 when writing out the correspondent results.
 
-So by calculating the Euclid distance between points, we should return `[1, 0]`
-for the example above.
+So by calculating the Euclidean distance between points, we should return
+`[1, 0]` for the example above.
 
 ## Requirements
 
