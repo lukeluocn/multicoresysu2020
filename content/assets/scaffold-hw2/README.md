@@ -46,5 +46,4 @@ So by calculating the Euclidean distance between points, we should return
 
 ## Requirements
 
-Further requirements about how to submit your solutions to hw2 will be announced
-later.
+Please upload your source code files and your report through the temporary site.
