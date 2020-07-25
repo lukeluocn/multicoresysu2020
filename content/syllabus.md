@@ -2,12 +2,13 @@
 title = "Syllabus"
 +++
 
-| Lecture | Topic | Slides and Supplementary Materials |
-|---------|-------|----------------------------|
-| 1   | Introduction        | [Slides](../assets/CUDA-1.pdf) |
-| 2-3 | C/C++ Basics        | [Slides](../assets/CUDA-2.pdf) |
-| 3-4 | OpenMP Basics       | [Slides](../assets/CUDA-3.pdf) |
-| 5-6 | CUDA Programming    | [Slides](../assets/CUDA-4.pdf) |
-| 7-8 | CUDA Memory         | [Slides](../assets/CUDA-5.pdf) |
-| ~ | Parallel Programming Patterns, etc. | |
-| ~ | Representative CUDA applications and common libraries | |
+| Topic                                 | Slides and Supplementary Materials |
+|---------------------------------------|------------------------------------|
+| Introduction                          | [Slides](../assets/CUDA-1.pdf)     |
+| C/C++ Basics                          | [Slides](../assets/CUDA-2.pdf)     |
+| OpenMP Basics                         | [Slides](../assets/CUDA-3.pdf)     |
+| CUDA Programming                      | [Slides](../assets/CUDA-4.pdf)     |
+| CUDA Memory                           | [Slides](../assets/CUDA-5.pdf)     |
+| Thread Model and Atomic Operations    | [Slides](../assets/CUDA-6.pdf)     |
+| Parallel Programming Patterns         | [Slides](../assets/CUDA-7.pdf)     |
+| Performance Optimization              | [Slides](../assets/CUDA-8.pdf)     |

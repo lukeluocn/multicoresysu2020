@@ -1,5 +1,7 @@
 # A Brief Guide to the JupyterHub Platform
 
+*(The platform would be unavailable for this course after 2020.07.29.)*
+
 First log in to http://jupyterhub.vickytse.cn/ (remember that you might have to set-up the VPN connection first).
 
 ## Step 0.1

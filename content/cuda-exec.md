@@ -1,5 +1,7 @@
 # A Brief Guide to the `rexec` Utility
 
+*(The utility will be offline after 2020.07.29.)*
+
 The `rexec` utility is still on its early development stage and is far from stable. The usage guide is also a work in progress.
 
 Besides, we would make the `rexec` utility project open soon.
