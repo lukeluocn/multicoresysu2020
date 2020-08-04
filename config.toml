@@ -46,13 +46,3 @@ weight = 20
 name = "Tool: MD5 Generator"
 url = "/md5"
 weight = 21
-
-[[menu.shortcuts]]
-name = "Guide: JupyterHub"
-url = "/jupyterhub"
-weight = 22
-
-[[menu.shortcuts]]
-name = "Guide: rexec"
-url = "/cuda-exec"
-weight = 23
